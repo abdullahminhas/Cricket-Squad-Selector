@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% for player in players %}
+<article class="media content-section">
+        <img class="rounded-circle article-img" src="{{ player.player_image }}">
+        <div class="media-body">
+            <div class="article-metadata">
+            <a><h3 style="display: inline">Players Name:</h3><h4 style="display: inline"> {{ player.player_name }}</h4></a>
+                <h6 class="text-secondary" style="padding-top: 5px;">{{ player.player_type }}</h6>
+
+                </div>
+            <div class="row">
+                        <div class="col-sm-6">
+            <p class="text-secondary"><span class="text-dark">Player Country:</span> {{ player.player_country }}</p>
+                <p class="text-secondary"><span class="text-dark">Player Matches:</span> {{ player.player_mat }}</p>
+            <p class="text-secondary"><span class="text-dark">Player Style:</span> {{ player.player_style }}</p>
+            <p class="text-secondary"><span class="text-dark">Player Batting Average:</span> {{ player.player_ave }}</p>
+            <p class="text-secondary"><span class="text-dark">Player Bowling Strike rate:</span> {{ player.player_bsr }}</p>
+            <p class="text-secondary"><span class="text-dark">Player bowling Average:</span> {{ player.player_bave }}</p>
+                </div>
+            <div class="col-sm-6">
+            <p class="text-secondary"><span class="text-dark">Player Innings:</span> {{ player.player_inns }}</p>
+            <p class="text-secondary"><span class="text-dark">Player Runs:</span> {{ player.player_runs }}</p>
+            <p class="text-secondary"><span class="text-dark">Players Batting High Score:</span> {{ player.player_hs }}</p>
+            <p class="text-secondary"><span class="text-dark">Wickets Taken:</span> {{ player.player_wkts }}</p>
+            <p class="text-secondary"><span class="text-dark">Player Batting Strike rate:</span> {{ player.player_sr }}</p>
+            <p class="text-secondary"><span class="text-dark">Player Bowling runs:</span> {{ player.player_bruns }}</p>
+            </div>
+                </div>
+                <center><p class="text-secondary"><span class="text-dark">Player Century:</span> {{ player.player_century }}</p></center>
+        </div>
+
+    {% if current_user.is_authenticated %}
+    <div>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update', player_id=player.player_id) }}" title="Update player record">Update</a>
+            <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal" title="Delete player permanently">Delete</button>
+          </div>
+    {% endif %}
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete Player</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+          <div class="modal-body">
+        <p>Are you sure you want to delete {{ player.player_name }} from list? You can't undo this action.</p>
+      </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <form action="{{ url_for('delete', player_id=player.player_id) }}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{% endfor %}
+{% endblock %}

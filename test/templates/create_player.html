@@ -1,0 +1,250 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="content-section">
+
+        <form method="post" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="row">
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                <div class="col-lg-12" >
+                
+            </div>
+                <div class="col-lg-12" >
+                <div class="form-group">
+                    {{ form.player_name.label(class="form-control-label") }}
+                    {% if form.player_name.errors %}
+                    {{ form.player_name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_name.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_name(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                    </div>
+                <div class="form-group col-lg-6">
+                    {{ form.player_style.label(class="form-control-label") }}
+                    {% if form.player_style.errors %}
+                    {{ form.player_style(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_style.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_style(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-6">
+                    {{ form.player_country.label(class="form-control-label") }}
+                    {% if form.player_country.errors %}
+                    {{ form.player_country(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_country.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_country(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-group col-lg-6">
+                    {{ form.player_type.label(class="form-control-label") }}
+                    {% if form.player_type.errors %}
+                    {{ form.player_type(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_type.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_type(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-6">
+                    {{ form.player_mat.label(class="form-control-label") }}
+                    {% if form.player_mat.errors %}
+                    {{ form.player_mat(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_mat.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_mat(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-4">
+                    {{ form.player_inns.label(class="form-control-label") }}
+                    {% if form.player_inns.errors %}
+                    {{ form.player_inns(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_inns.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_inns(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-group col-lg-4">
+                    {{ form.player_runs.label(class="form-control-label") }}
+                    {% if form.player_runs.errors %}
+                    {{ form.player_runs(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_runs.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_runs(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-4">
+                    {{ form.player_hs.label(class="form-control-label") }}
+                    {% if form.player_hs.errors %}
+                    {{ form.player_hs(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_hs.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_hs(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                
+                                <div class="form-group col-lg-3">
+                    {{ form.player_ave.label(class="form-control-label") }}
+                    {% if form.player_ave.errors %}
+                    {{ form.player_ave(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_ave.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_ave(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-group col-lg-3">
+                    {{ form.player_sr.label(class="form-control-label") }}
+                    {% if form.player_sr.errors %}
+                    {{ form.player_sr(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_sr.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_sr(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-group col-lg-3">
+                    {{ form.player_century.label(class="form-control-label") }}
+                    {% if form.player_century.errors %}
+                    {{ form.player_century(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_century.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_century(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-group col-lg-3">
+                    {{ form.player_bruns.label(class="form-control-label") }}
+                    {% if form.player_bruns.errors %}
+                    {{ form.player_bruns(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_bruns.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_bruns(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-4">
+                    {{ form.player_wkts.label(class="form-control-label") }}
+                    {% if form.player_wkts.errors %}
+                    {{ form.player_wkts(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_wkts.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_wkts(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-4">
+                    {{ form.player_bave.label(class="form-control-label") }}
+                    {% if form.player_bave.errors %}
+                    {{ form.player_bave(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_bave.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_bave(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+                <div class="form-group col-lg-4">
+                    {{ form.player_bsr.label(class="form-control-label") }}
+                    {% if form.player_bsr.errors %}
+                    {{ form.player_bsr(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.player_bsr.errors %}
+                        <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    {{ form.player_bsr(class="form-control form-control-lg") }}
+                    {% endif %}
+
+                </div>
+
+               <!-- <div class="form-group">
+                    {{ form.image.label() }}
+                    {{ form.image(class="form-control-file") }}
+                    {% if form.image.errors %}
+                        {% for error in form.image.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div> -->
+            </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-lg btn-outline-info", style="width: 100%") }}
+                </div>
+        </form>
+
+    </div>
+
+{% endblock %}

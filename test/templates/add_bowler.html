@@ -1,0 +1,871 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="content-section">
+  <h2>Add Bowler</h2>
+</div>
+
+<div class="content-section">
+    <form class="" action="" method="POST" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <fieldset class="form">
+
+
+            <div class="form-group">
+              {{ form.PlayerName.label(class="form-control-label")}}
+              {% if form.PlayerName.errors %}
+                {{ form.PlayerName(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.PlayerName.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.PlayerName(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+
+        <div class="form-group">
+          {{ form.country.label(class="form-control-label")}}
+          {% if form.country.errors %}
+            {{ form.country(class="form-control form-control-lg is-invalid")}}
+            <div class="invalid-feedback">
+              {% for error in form.country.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+          {{ form.country(class="form-control form-control-lg")}}
+          {% endif %}
+        </div>
+
+        <div class="row">
+          
+
+          <div class="col-md-6">
+            <div class="form-group">
+              {{ form.m1_run.label(class="form-control-label")}}
+              {% if form.m1_run.errors %}
+                {{ form.m1_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m1_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m1_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              {{ form.m1_bowl.label(class="form-control-label")}}
+              {% if form.m1_bowl.errors %}
+                {{ form.m1_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m1_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m1_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              {{ form.m1_op.label(class="form-control-label")}}
+              {% if form.m1_op.errors %}
+                {{ form.m1_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m1_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m1_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              {{ form.m1_vnu.label(class="form-control-label")}}
+              {% if form.m1_vnu.errors %}
+                {{ form.m1_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m1_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m1_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m2_run.label(class="form-control-label")}}
+              {% if form.m2_run.errors %}
+                {{ form.m2_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m2_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m2_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m2_bowl.label(class="form-control-label")}}
+              {% if form.m2_bowl.errors %}
+                {{ form.m2_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m2_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m2_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m2_op.label(class="form-control-label")}}
+              {% if form.m2_op.errors %}
+                {{ form.m2_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m2_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m2_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m2_vnu.label(class="form-control-label")}}
+              {% if form.m2_vnu.errors %}
+                {{ form.m2_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m2_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m2_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+<!--
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m3_run.label(class="form-control-label")}}
+              {% if form.m3_run.errors %}
+                {{ form.m3_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m3_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m3_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m3_bowl.label(class="form-control-label")}}
+              {% if form.m3_bowl.errors %}
+                {{ form.m3_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m3_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m3_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m3_op.label(class="form-control-label")}}
+              {% if form.m3_op.errors %}
+                {{ form.m3_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m3_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m3_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m3_vnu.label(class="form-control-label")}}
+              {% if form.m3_vnu.errors %}
+                {{ form.m3_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m3_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m3_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m4_run.label(class="form-control-label")}}
+              {% if form.m4_run.errors %}
+                {{ form.m4_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m4_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m4_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m4_bowl.label(class="form-control-label")}}
+              {% if form.m4_bowl.errors %}
+                {{ form.m4_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m4_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m4_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m4_op.label(class="form-control-label")}}
+              {% if form.m4_op.errors %}
+                {{ form.m4_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m4_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m4_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m4_vnu.label(class="form-control-label")}}
+              {% if form.m4_vnu.errors %}
+                {{ form.m4_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m4_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m4_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m5_run.label(class="form-control-label")}}
+              {% if form.m5_run.errors %}
+                {{ form.m5_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m5_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m5_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m5_bowl.label(class="form-control-label")}}
+              {% if form.m5_bowl.errors %}
+                {{ form.m5_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m5_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m5_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m5_op.label(class="form-control-label")}}
+              {% if form.m5_op.errors %}
+                {{ form.m5_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m5_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m5_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m5_vnu.label(class="form-control-label")}}
+              {% if form.m5_vnu.errors %}
+                {{ form.m5_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m5_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m5_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m6_run.label(class="form-control-label")}}
+              {% if form.m6_run.errors %}
+                {{ form.m6_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m6_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m6_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m6_bowl.label(class="form-control-label")}}
+              {% if form.m6_bowl.errors %}
+                {{ form.m6_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m6_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m6_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m6_op.label(class="form-control-label")}}
+              {% if form.m6_op.errors %}
+                {{ form.m6_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m6_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m6_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m6_vnu.label(class="form-control-label")}}
+              {% if form.m6_vnu.errors %}
+                {{ form.m6_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m6_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m6_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m7_run.label(class="form-control-label")}}
+              {% if form.m7_run.errors %}
+                {{ form.m7_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m7_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m7_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m7_bowl.label(class="form-control-label")}}
+              {% if form.m7_bowl.errors %}
+                {{ form.m7_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m7_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m7_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m7_op.label(class="form-control-label")}}
+              {% if form.m7_op.errors %}
+                {{ form.m7_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m7_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m7_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m7_vnu.label(class="form-control-label")}}
+              {% if form.m7_vnu.errors %}
+                {{ form.m7_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m7_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m7_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m8_run.label(class="form-control-label")}}
+              {% if form.m8_run.errors %}
+                {{ form.m8_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m8_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m8_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m8_bowl.label(class="form-control-label")}}
+              {% if form.m8_bowl.errors %}
+                {{ form.m8_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m8_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m8_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m8_op.label(class="form-control-label")}}
+              {% if form.m8_op.errors %}
+                {{ form.m8_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m8_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m8_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m8_vnu.label(class="form-control-label")}}
+              {% if form.m8_vnu.errors %}
+                {{ form.m8_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m8_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m8_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m9_run.label(class="form-control-label")}}
+              {% if form.m9_run.errors %}
+                {{ form.m9_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m9_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m9_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m9_bowl.label(class="form-control-label")}}
+              {% if form.m9_bowl.errors %}
+                {{ form.m9_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m9_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m9_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m9_op.label(class="form-control-label")}}
+              {% if form.m9_op.errors %}
+                {{ form.m9_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m9_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m9_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m9_vnu.label(class="form-control-label")}}
+              {% if form.m9_vnu.errors %}
+                {{ form.m9_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m9_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m9_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m10_run.label(class="form-control-label")}}
+              {% if form.m10_run.errors %}
+                {{ form.m10_run(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m10_run.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m10_run(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m10_bowl.label(class="form-control-label")}}
+              {% if form.m10_bowl.errors %}
+                {{ form.m10_bowl(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m10_bowl.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m10_bowl(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.m10_op.label(class="form-control-label")}}
+              {% if form.m10_op.errors %}
+                {{ form.m10_op(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m10_op.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m10_op(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              {{ form.m10_vnu.label(class="form-control-label")}}
+              {% if form.m10_vnu.errors %}
+                {{ form.m10_vnu(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.m10_vnu.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.m10_vnu(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.t50.label(class="form-control-label")}}
+              {% if form.t50.errors %}
+                {{ form.t50(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.t50.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.t50(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.t100.label(class="form-control-label")}}
+              {% if form.t100.errors %}
+                {{ form.t100(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.t100.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.t100(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.truns.label(class="form-control-label")}}
+              {% if form.truns.errors %}
+                {{ form.truns(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.truns.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.truns(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.tbf.label(class="form-control-label")}}
+              {% if form.tbf.errors %}
+                {{ form.tbf(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.tbf.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.tbf(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.avgrun.label(class="form-control-label")}}
+              {% if form.avgrun.errors %}
+                {{ form.avgrun(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.avgrun.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.avgrun(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.avgsr.label(class="form-control-label")}}
+              {% if form.avgsr.errors %}
+                {{ form.avgsr(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.avgsr.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.avgsr(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.rf50.label(class="form-control-label")}}
+              {% if form.rf50.errors %}
+                {{ form.rf50(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.rf50.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.rf50(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              {{ form.rf100.label(class="form-control-label")}}
+              {% if form.rf100.errors %}
+                {{ form.rf100(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.rf100.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.rf100(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.tbf_percentage.label(class="form-control-label")}}
+              {% if form.tbf_percentage.errors %}
+                {{ form.tbf_percentage(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.tbf_percentage.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.tbf_percentage(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.truns_percentage.label(class="form-control-label")}}
+              {% if form.truns_percentage.errors %}
+                {{ form.truns_percentage(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.truns_percentage.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.truns_percentage(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              {{ form.tbf_percentage.label(class="form-control-label")}}
+              {% if form.tbf_percentage.errors %}
+                {{ form.tbf_percentage(class="form-control form-control-lg is-invalid")}}
+                <div class="invalid-feedback">
+                  {% for error in form.tbf_percentage.errors %}
+                    <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+              {% else %}
+              {{ form.tbf_percentage(class="form-control form-control-lg")}}
+              {% endif %}
+            </div>
+          </div>
+        </div> -->
+
+    </fieldset>
+
+    <div class="form-group">
+      {{ form.submit(class="btn btn-lg btn-outline-info", style="width: 100%")}}
+    </div>
+
+  </form>
+</div>
+
+{% endblock %}

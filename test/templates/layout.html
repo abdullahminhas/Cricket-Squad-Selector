@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    {% if title %}
+        <title>CSS - {{ title }}</title>
+    {% else %}
+        <title>CSS</title>
+    {% endif %}
+</head>
+<style type="text/css">
+  .social-links:hover {
+  transform: scale(1.1);
+  transition: transform 330ms ease-in-out;
+  }
+</style>
+<body style="background-color: #e9ebee">
+<header class="site-header">
+<nav class="navbar navbar-expand-lg navbar-successs bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="{{ url_for('home') }}" style="color:white" title="CSS">Cricket Squad Selector</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{{ url_for('home') }}" title="Home">Home</a>
+              <a class="nav-item nav-link" href="{{ url_for('player') }}" title="Players List">Player</a>
+                <a class="nav-item nav-link" href="{{ url_for('squad') }}" title="Squad">Squad</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+                {% if current_user.is_authenticated %}
+                <a class="nav-item nav-link" href="{{ url_for('account') }}" title="Account Settings"><strong>{{ current_user.username }}</strong></a>
+                <a class="nav-item nav-link" href="{{ url_for('new_player') }}" title="New Player">Create Player</a>
+                <a class="nav-item nav-link" href="{{ url_for('logout') }}" title="Logout {{ current_user.username }}">Logout</a>
+                {% else %}
+              <a class="nav-item nav-link" href="{{ url_for('login') }}" title="Login">Login</a>
+              <a class="nav-item nav-link" href="{{ url_for('register') }}" title="Register">Register</a>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+            </div>
+
+
+
+<div class="col-md-4" >
+<!--<div class="content-section" >
+<form action="{{ url_for('search') }}" style="margin: 13px">
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-primary" type="submit">search</button>
+  </div>
+</div>
+</form>
+</div>-->
+
+          <div class="content-section">
+            <h3 class="text-muted" style="margin-bottom: 20px;">Quick Menu</h3>
+
+              <ul class="list-group" style="margin-bottom: 10px;"><strong>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a></li>
+                <!--
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('player') }}">Players Data</a></li>
+                  <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('squad') }}" title="View possible squad">Squad Selection</a></li>
+                -->
+                  {% if current_user.is_authenticated %}
+                  <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('account') }}" title="{{ current_user.username }}">Account Settings</a></li>
+                  <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('new_player') }}" title="Add new player to list">Create New Player</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{url_for('add_batsman')}}">Add New Batsman</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{url_for('add_bowler')}}">Add New Bowler</a></li>
+                  {% else %}
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{url_for('register')}}">Register</a></li>
+                <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="{{url_for('reset_request')}}">Reset Password</a></li>
+                  {% endif %}
+                  </strong>
+              </ul>
+          </div>
+
+    <div class="content-section" title="Language Support">
+        <p style="margin-top: 10px; margin-bottom: 10px;"><strong>Language: </strong><a Href="{{ url_for('language') }}" title="English Language">English</a> · <a Href="{{ url_for('language') }}" title="اردو زبان">Urdu</a></p>
+    </div>
+    <div style="margin-left: 4px" title="Project title - CSS">
+    <p class="text-secondary" ><a href="https://abdullahminhas.github.io/" title="Social links">Portfolio</a> · Cricket Squad Selector &copy; 2020</p>
+        </div>
+    <hr>
+    <div>
+      <a href="https://github.com/abdullahminhas" target="_blank" title="Github profile"><img src="https://img.icons8.com/doodle/46/000000/github--v1.png" class="social-links"/></a>
+      <a href="https://www.linkedin.com/in/abdullah-minhas-041497175/" target="_blank" title="Linkedin profile"><img src="https://img.icons8.com/doodle/46/000000/linkedin--v2.png" class="social-links"/></a>
+      <a href="mailto:aminhas@gmail.com" target="_blank" title="Gmail Email ID"><img src="https://img.icons8.com/plasticine/46/000000/gmail.png" class="social-links"/></a>
+      <a href="https://www.facebook.com/mabdullahminhas1" target="_blank" title="Facebook profile"><img src="https://img.icons8.com/doodle/46/000000/facebook-new.png" class="social-links"/></a>
+      <a href="https://www.instagram.com/abdullahminhas/" target="_blank" title="Instagram profile"><img src="https://img.icons8.com/doodle/46/000000/instagram--v1.png" class="social-links"/></a>
+      <a href="https://twitter.com/Mabdullahminhas" target="_blank" title="Twitter profile"><img src="https://img.icons8.com/doodle/46/000000/twitter--v1.png" class="social-links"/></a>
+      <a href="https://www.youtube.com/channel/UCcTrojcVpu0OmW-_HQMORxQ" target="_blank" title="Youtube channel"><img src="https://img.icons8.com/doodle/46/000000/youtube-play.png" class="social-links"/></a>
+    </div>
+    </div>
+
+
+
+
+</div>
+</div>
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

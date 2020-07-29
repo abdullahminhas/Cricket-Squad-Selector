@@ -1,0 +1,1 @@
+"pip install flask-whooshalchemy3" installed at 24/04/2020 but not used. - for search

@@ -1,0 +1,31 @@
+<div class="content-section" style="padding: 0px;">
+
+ 
+  
+  
+ 
+</div>
+
+<div class="content-section" >
+  <center><h3>Squad</h3>
+  </center>
+  </div>
+
+  <div class="content-section" style="padding: 0px;">
+        <li class=" list-group-item list-group-item-danger text-dark"><strong>Captain</strong></li>
+        <li class="list-group-item list-group-item-danger text-dark">{{captain}} </li>
+  <li class=" list-group-item list-group-item-secondary text-dark"><strong>Wicketkeeper</strong></li>
+  <li class="list-group-item list-group-item-secondary text-dark">{{wicketkeeper1}} </li>
+  <li class="list-group-item list-group-item-secondary text-dark">{{wicketkeeper2}} </li>
+  <li class=" list-group-item list-group-item-success text-dark"><strong>Batsman</strong></li>
+  {% for batsman in batsmans %}
+      <li class="list-group-item list-group-item-success text-dark">{{batsman}} </li>
+  {% endfor %}
+  <li class=" list-group-item list-group-item-warning text-dark"><strong>Bowler</strong></li>
+  {% for bowler in bowlers %}
+      <li class="list-group-item list-group-item-warning text-dark">{{bowler}}</li>
+  {% endfor %}
+      
+
+
+    </div>

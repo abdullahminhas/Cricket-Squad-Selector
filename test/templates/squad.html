@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="content-section">
+    <h3><strong>Suitable Squad Selection</strong></h3>
+</div>
+
+<div class="content-section">
+    <form class="" action="" method="POST" enctype="multipart/form-data">
+      {{ form.hidden_tag() }}
+      <fieldset class="form">
+      <div class="form-group">
+        {{ form.country.label(class="form-control-label")}}
+        {% if form.country.errors %}
+          {{ form.country(class="form-control form-control-lg is-invalid")}}
+          <div class="invalid-feedback">
+            {% for error in form.country.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+        {{ form.country(class="form-control form-control-lg")}}
+        {% endif %}
+      </div>
+
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info", style="width: 100%")}}
+    </div>
+    </form>
+
+
+</div>
+
+    {% include list ignore missing %}
+
+{% endblock %}
