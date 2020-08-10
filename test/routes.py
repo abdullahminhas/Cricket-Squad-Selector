@@ -424,7 +424,7 @@ def add_batsman():
 def send_reset_email(user):
     token = user.get_reset_token()
     msg = Message('Password Reset Request',
-                  sender='thesquadselector@gmail.com',
+                  sender='YourEmailID',
                   recipients=[user.email])
     msg.body = f'''Dear {user.username},
 To reset your password, visit the following link:

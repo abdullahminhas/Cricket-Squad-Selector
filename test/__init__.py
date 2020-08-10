@@ -18,8 +18,8 @@ login_manager.login_message_category = 'info'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'thesquadselector@gmail.com'
-app.config['MAIL_PASSWORD'] = 'cricket@321'
+app.config['MAIL_USERNAME'] = 'YourEmailID' #write your email id here in "YourEmailID"
+app.config['MAIL_PASSWORD'] = 'YourPassword' #write your email id password here in "YourPassword"
 mail = Mail(app)
 
 from test import routes
