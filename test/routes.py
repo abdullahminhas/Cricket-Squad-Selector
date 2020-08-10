@@ -204,7 +204,6 @@ def update(player_id):
         flash('Your player has been updated!', 'success')
         return redirect(url_for('player', player_id=player.player_id))
     elif request.method == 'GET':
-        form.player_id.data = player.player_id
         form.player_name.data = player.player_name
         form.player_country.data = player.player_country
         form.player_ave.data = player.player_ave
