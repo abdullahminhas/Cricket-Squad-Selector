@@ -432,7 +432,7 @@ To reset your password, visit the following link:
 If you did not make this request then simply ignore this email and no changes will be made to your account.
 '''
     mail.send(msg)
-
+#just put your email above and you can send your email other changes are in "init.py"
 
 @app.route("/reset_password", methods=['GET', 'POST'])
 def reset_request():
